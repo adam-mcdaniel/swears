@@ -20,8 +20,8 @@ impl From<Input> for Key {
         match input {
             Input::Character('\n') | Input::Character('\r') => Self::Enter,
             Input::Character('\t') => Self::Tab,
+            Input::KeyBackspace | Input::Character('\u{8}') => Self::Backspace,
             Input::Character(ch) => Self::Char(ch),
-            Input::KeyBackspace => Self::Backspace,
             Input::KeyLeft => Self::Left,
             Input::KeyRight => Self::Right,
             Input::KeyUp => Self::Up,
