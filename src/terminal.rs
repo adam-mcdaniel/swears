@@ -1,6 +1,6 @@
 use crate::{Color, ColorString, Key};
 use pancurses::{
-    curs_set, def_prog_mode, def_shell_mode, doupdate, echo, endwin, init_pair,
+    resize_term, curs_set, def_prog_mode, def_shell_mode, doupdate, echo, endwin, init_pair,
     initscr, noecho, noraw, raw, reset_prog_mode, reset_shell_mode, resize_term, start_color,
     Window, COLOR_BLACK, COLOR_BLUE, COLOR_CYAN, COLOR_GREEN, COLOR_MAGENTA, COLOR_PAIR, COLOR_RED,
     COLOR_WHITE, COLOR_YELLOW,
@@ -18,6 +18,7 @@ impl Terminal {
     pub fn new() -> Self {
         let result = Self { win: initscr() };
         raw();
+        resize_term(24, 80);
         result.win.keypad(true);
         result.disable_echo();
         result.disable_scrolling();
