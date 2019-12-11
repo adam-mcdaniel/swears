@@ -1,5 +1,6 @@
 use crate::{Color, ColorString, Key};
 use pancurses::{
+	chtype,
     curs_set, def_prog_mode, def_shell_mode, doupdate, echo, endwin, init_pair,
     initscr, noecho, noraw, raw, reset_prog_mode, reset_shell_mode, resize_term, start_color,
     Window, COLOR_BLACK, COLOR_BLUE, COLOR_CYAN, COLOR_GREEN, COLOR_MAGENTA, COLOR_PAIR, COLOR_RED,
@@ -121,7 +122,7 @@ impl Terminal {
             Color::Default => COLOR_WHITE,
         };
 
-        self.win.attrset(COLOR_PAIR(color_num as u64));
+        self.win.attrset(COLOR_PAIR(color_num as chtype));
 
         for ch in cs.to_string().chars() {
             if ch == '\n' {
@@ -154,7 +155,7 @@ impl Terminal {
             Color::Default => COLOR_WHITE,
         };
 
-        self.win.attrset(COLOR_PAIR(color_num as u64));
+        self.win.attrset(COLOR_PAIR(color_num as chtype));
         self.win.printw(cs.to_string());
     }
 
