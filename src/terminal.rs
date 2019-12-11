@@ -1,16 +1,12 @@
 use crate::{Color, ColorString, Key};
 use pancurses::{
-    curs_set, def_prog_mode, def_shell_mode, doupdate, echo, endwin, init_color, init_pair,
+    curs_set, def_prog_mode, def_shell_mode, doupdate, echo, endwin, init_pair,
     initscr, noecho, noraw, raw, reset_prog_mode, reset_shell_mode, resize_term, start_color,
     Window, COLOR_BLACK, COLOR_BLUE, COLOR_CYAN, COLOR_GREEN, COLOR_MAGENTA, COLOR_PAIR, COLOR_RED,
     COLOR_WHITE, COLOR_YELLOW,
 };
 
-use std::{
-    str::Chars,
-    fmt::Display,
-    i32::{MAX, MIN},
-};
+use std::i32::{MAX, MIN};
 
 
 #[derive(Debug)]
