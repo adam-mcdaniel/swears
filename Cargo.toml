@@ -3,6 +3,12 @@ name = "swears"
 version = "0.1.0"
 authors = ["adam-mcdaniel <adam.mcdaniel17@gmail.com>"]
 edition = "2018"
+description = "Use swears, not curses"
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/adam-mcdaniel/swears"
+homepage = "https://github.com/adam-mcdaniel/swears"
+documentation = "https://docs.rs/swears"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [[bin]]
