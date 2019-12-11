@@ -18,7 +18,9 @@ impl Terminal {
     pub fn new() -> Self {
         let result = Self { win: initscr() };
         raw();
-        resize_term(24, 80);
+        if cfg!(target_family = "windows") {
+            self.set_size(132, 43)
+        }
         result.win.keypad(true);
         result.disable_echo();
         result.disable_scrolling();
@@ -38,6 +40,10 @@ impl Terminal {
         init_pair(COLOR_MAGENTA, COLOR_MAGENTA, COLOR_BLACK);
         init_pair(COLOR_BLACK, COLOR_BLACK, COLOR_BLACK);
         result
+    }
+
+    pub fn set_size(&self, x: i32, y: i32) {
+        resize_term(y, x);
     }
 
     pub fn hide_cursor(&self) {
