@@ -15,5 +15,6 @@ documentation = "https://docs.rs/swears"
 name = "bin"
 path = "src/bin.rs"
 
-[dependencies]
-pancurses = "0.16"
+[dependencies.pancurses]
+version = "0.16"
+features = ["win32"]
