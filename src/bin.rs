@@ -10,7 +10,9 @@ fn main() {
     for key in &term {
         match key {
             Key::Char(ch) => password.push(ch),
-            Key::Backspace => { password.pop(); },
+            Key::Backspace => {
+                password.pop();
+            }
             Key::Enter => break,
             _ => {}
         }
