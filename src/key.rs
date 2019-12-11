@@ -3,6 +3,7 @@ use pancurses::Input;
 #[derive(Clone, Copy, Debug, PartialEq, PartialOrd)]
 pub enum Key {
     Char(char),
+    Tab,
     Enter,
     Backspace,
     Left,
@@ -18,6 +19,7 @@ impl From<Input> for Key {
     fn from(input: Input) -> Self {
         match input {
             Input::Character('\n') => Self::Enter,
+            Input::Character('\t') => Self::Tab,
             Input::Character(ch) => Self::Char(ch),
             Input::KeyBackspace => Self::Backspace,
             Input::KeyLeft => Self::Left,
