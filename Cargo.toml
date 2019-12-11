@@ -1,0 +1,15 @@
+[package]
+name = "swears"
+version = "0.1.0"
+authors = ["adam-mcdaniel <adam.mcdaniel17@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "bin"
+path = "src/bin.rs"
+
+[dependencies]
+pancurses = "0.16"
+# crossterm = "0.13"
+# termion = "1.5.4"
