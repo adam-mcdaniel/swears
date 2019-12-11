@@ -19,7 +19,7 @@ impl Terminal {
         let result = Self { win: initscr() };
         raw();
         if cfg!(target_family = "windows") {
-            self.set_size(132, 43)
+            result.set_size(132, 43);
         }
         result.win.keypad(true);
         result.disable_echo();
