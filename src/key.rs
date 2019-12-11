@@ -18,7 +18,7 @@ pub enum Key {
 impl From<Input> for Key {
     fn from(input: Input) -> Self {
         match input {
-            Input::Character('\n') => Self::Enter,
+            Input::Character('\n') | Input::Character('\r') => Self::Enter,
             Input::Character('\t') => Self::Tab,
             Input::Character(ch) => Self::Char(ch),
             Input::KeyBackspace => Self::Backspace,
