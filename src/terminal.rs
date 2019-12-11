@@ -183,6 +183,10 @@ impl Terminal {
     pub fn get_cursor_y(&self) -> i32 {
         self.win.get_cur_y()
     }
+
+    pub fn quit(&self) {
+        endwin();
+    }
 }
 
 impl Iterator for Terminal {
@@ -201,7 +205,7 @@ impl Iterator for &Terminal {
 
 impl Drop for Terminal {
     fn drop(&mut self) {
-        endwin();
+        self.quit();
     }
 }
 
