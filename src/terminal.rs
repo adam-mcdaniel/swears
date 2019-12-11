@@ -211,3 +211,5 @@ impl Clone for Terminal {
         Self { win }
     }
 }
+
+unsafe impl Sync for Terminal {}
