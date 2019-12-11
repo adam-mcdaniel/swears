@@ -1,11 +1,11 @@
 use swears::{Colorize, Key, Terminal};
 
 fn main() {
-    let term = Terminal::new();
+    let term = Terminal::with_color();
     term.disable_echo();
     term.enable_scrolling();
 
-    term.print("Enter your password: ".green());
+    term.println("Enter your password: ".green());
     let mut password = String::new();
     for key in &term {
         match key {
@@ -15,6 +15,7 @@ fn main() {
             _ => {}
         }
     }
-    drop(term);
-    println!("Your password was '{}'", password);
+
+    term.println(format!("Your password was '{}'", password).red());
+    term.get_key();
 }

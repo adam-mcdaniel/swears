@@ -171,6 +171,18 @@ impl Terminal {
     pub fn get_height(&self) -> i32 {
         self.win.get_max_y()
     }
+
+    pub fn get_cursor(&self) -> (i32, i32) {
+        (self.get_cursor_x(), self.get_cursor_y())
+    }
+
+    pub fn get_cursor_x(&self) -> i32 {
+        self.win.get_cur_x()
+    }
+
+    pub fn get_cursor_y(&self) -> i32 {
+        self.win.get_cur_y()
+    }
 }
 
 impl Iterator for Terminal {
