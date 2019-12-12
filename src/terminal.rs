@@ -157,16 +157,7 @@ impl Terminal {
         };
 
         self.win.attrset(COLOR_PAIR(color_num as chtype));
-        let s = cs.to_string();
-
-        for (i, ch) in s.chars().enumerate() {
-            if ch == '\n' || ch == '\r' {
-                self.win.printw(ch.to_string());
-            } else if i as i32 + self.get_cursor_x() < self.get_width() {
-                self.win.printw(ch.to_string());
-            }
-        }
-
+        self.win.printw(cs.to_string());
         self.win.attrset(COLOR_PAIR(COLOR_WHITE as chtype));
     }
 
