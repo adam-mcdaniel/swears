@@ -160,10 +160,8 @@ impl Terminal {
         let s = cs.to_string();
 
         for (i, ch) in s.chars().enumerate() {
-            if ch == '\n' || ch == '\r' {
-                self.win.printw(ch.to_string());
-            } else if i as i32 + self.get_cursor_x() >= self.get_width() {
-                self.win.printw("\n\r");
+            if i as i32 + self.get_cursor_x() >= self.get_width() {
+                self.win.printw("\n");
             }
             self.win.printw(ch.to_string());
         }
