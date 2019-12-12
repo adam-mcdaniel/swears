@@ -158,12 +158,14 @@ impl Terminal {
 
         self.win.attrset(COLOR_PAIR(color_num as chtype));
         let s = cs.to_string();
-
-        for (i, ch) in s.chars().enumerate() {
+        let mut i = 0;
+        for ch in s.chars() {
             if i as i32 + self.get_cursor_x() >= self.get_width() {
+                i = 0;
                 self.win.printw("\n");
             }
             self.win.printw(ch.to_string());
+            i += 1;
         }
 
         self.win.attrset(COLOR_PAIR(COLOR_WHITE as chtype));
