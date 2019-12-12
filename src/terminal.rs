@@ -38,6 +38,9 @@ impl Terminal {
         init_pair(COLOR_YELLOW, COLOR_YELLOW, COLOR_BLACK);
         init_pair(COLOR_MAGENTA, COLOR_MAGENTA, COLOR_BLACK);
         init_pair(COLOR_BLACK, COLOR_BLACK, COLOR_BLACK);
+
+        result.win.bkgd(COLOR_PAIR(COLOR_BLACK as chtype));
+
         result
     }
 
