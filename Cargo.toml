@@ -1,6 +1,6 @@
 [package]
 name = "swears"
-version = "0.1.11"
+version = "0.1.12"
 authors = ["adam-mcdaniel <adam.mcdaniel17@gmail.com>"]
 edition = "2018"
 description = "Use swears, not curses"
@@ -9,11 +9,6 @@ license = "MIT"
 repository = "https://github.com/adam-mcdaniel/swears"
 homepage = "https://github.com/adam-mcdaniel/swears"
 documentation = "https://docs.rs/swears"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-[[bin]]
-name = "bin"
-path = "src/bin.rs"
 
 [dependencies.pancurses]
 version = "0.16"
